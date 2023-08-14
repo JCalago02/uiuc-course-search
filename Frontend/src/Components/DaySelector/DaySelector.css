@@ -1,0 +1,17 @@
+.day-wrapper {
+    border: 1px solid white;
+    border-radius: 7px;
+    width: fit-content;
+}
+.day-wrapper:hover{
+    cursor: pointer;
+}
+
+.day-text{
+    padding:10px 20px;
+}
+
+.orange-day {
+    color: orange;
+    border: 1px solid orange;
+}

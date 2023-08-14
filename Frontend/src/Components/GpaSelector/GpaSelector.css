@@ -1,0 +1,43 @@
+.flex-wrapper-gpa {
+    position:absolute;
+    margin: 15px 0px 0px 260px;
+    background-color: black;
+    border-top: solid 2px orange;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    justify-content: center;
+    padding: 1% 2%;
+}
+
+@media (max-width: 600px) {
+    .flex-wrapper-gpa {
+        left:10px;
+    }
+}
+
+.deci-input {
+    width: 45px;
+    border-radius: 7px;
+    border-color:white;
+    outline:none;
+}
+
+.deci-input:focus {
+    border-color:orange;
+}
+
+.gpa-submit-button {
+    background-color: white;
+    outline:none;
+    border:none;
+    border-radius: 40px;
+    padding: 4px 18px;
+}
+
+.gpa-submit-button:hover {
+    cursor: pointer;
+}
+
+

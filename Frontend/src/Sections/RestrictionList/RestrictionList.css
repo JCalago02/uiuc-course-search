@@ -1,0 +1,7 @@
+.flex-container-restrictions {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    gap: 5px;
+    flex-wrap: wrap;
+}

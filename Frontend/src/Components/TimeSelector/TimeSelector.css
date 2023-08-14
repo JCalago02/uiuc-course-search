@@ -1,0 +1,11 @@
+.grid-wrapper-time {
+    display:grid;
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.time-input {
+    margin-top: 10px;
+    width: 100px;
+}

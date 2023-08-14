@@ -1,0 +1,16 @@
+.restriction-display {
+    display: flex;
+    align-items: center;
+    padding: 4px 6px;
+    border: solid 2px white;
+    border-radius: 70px;
+}
+
+.x-button {
+    margin-left: 10px;
+}
+
+
+.x-button:hover {
+    cursor: pointer;
+}

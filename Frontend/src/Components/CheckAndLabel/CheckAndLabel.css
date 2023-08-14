@@ -1,0 +1,26 @@
+.flex-wrapper {
+    display: flex;
+    background-color: #121212;
+    align-items: center;
+    gap: 2%;
+    padding: 18px 20px;
+}
+.flex-wrapper:hover{
+    background-color: #333333; 
+}
+
+.label {
+    white-space: nowrap;
+}
+.bold {
+    font-weight: 600;
+}
+
+.bold-wrapper {
+    font-weight: 600;
+    border-top:solid orange;
+    background-color: black;
+}
+.bold-wrapper:hover{
+    background-color: #333333; 
+}

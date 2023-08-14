@@ -1,0 +1,48 @@
+.find-classes-page-content {
+    width: 1740px;
+
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.find-classes-results-container {
+    display:grid;
+
+    grid-template-columns: 1fr, 1fr;
+    padding-top: 100px;
+    justify-content: center;
+    row-gap: 50px;
+    column-gap: 45px;
+}
+
+.find-classes-header-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 55px;
+}
+
+.find-classes-bold {
+    font-weight: bold;
+    font-size: 1.6em;
+    padding-bottom: 20px;
+}
+
+@media (min-width: 1245px) and (max-width: 1759px) {
+    .find-classes-results-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1760px) {
+    .find-classes-results-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 1760px) {
+    .find-classes-page-content {
+        width: 90%;
+    }
+}

@@ -3,25 +3,15 @@ import { useState } from 'react'
 
 
 function GpaSelector({setGPABounds}) {
-    const [localMinGPA, setLocalMinGPA] = useState(-2.0);
-    const [localMaxGPA, setLocalMaxGPA] = useState(-1.0);
-
+    const [localMinGPA, setLocalMinGPA] = useState();
+    const [localMaxGPA, setLocalMaxGPA] = useState();
+    
     function HandleMinChange(e) {
-        const isValid = e.target.value.length !== 0;
-        if (isValid) {
-            setLocalMinGPA(e.target.value);
-        } else {
-            setLocalMinGPA(-2);
-        }
+        setLocalMinGPA(e.target.value);
     }
 
     function HandleMaxChange(e) {
-        const isValid = e.target.value.length !== 0;
-        if (isValid) {
-            setLocalMaxGPA(e.target.value);
-        } else {
-            setLocalMaxGPA(5);
-        }
+        setLocalMaxGPA(e.target.value);
     }
 
     function HandleGPASubmit() {

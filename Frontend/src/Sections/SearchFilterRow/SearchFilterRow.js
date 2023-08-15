@@ -28,14 +28,41 @@ function SearchFilterRow({restrictionList, setRestrictionList, FetchClassSearch}
         15: "Quantitative Reasoning II"
     }
 
+    // code for GPA useState handling within search filter section
+    // validates input GPA, handles alert boxes if it isn't
+    function ValidateGPAChange(newMinGPA, newMaxGPA) {
+        if (newMinGPA === undefined || newMaxGPA === undefined) {
+            alert('Cannot submit an empty GPA');
+            return false;
+        }
+        if (newMinGPA > newMaxGPA) {
+            alert('Min GPA is greater than max GPA!');
+            return false;
+        }
+        if (newMinGPA < 0.0) {
+            alert('GPA cannot be negative');
+            return false;
+        }
+        if (newMaxGPA > 4.0) {
+            alert('GPA cannot be higher than 4.0');
+            return false;
+        }
+        return true;
+    }
+
+    // updates GPA usestate
     function HandleGPAChange(newGPABounds) {
         const newMinGPA = newGPABounds[0];
         const newMaxGPA = newGPABounds[1];
-        setRestrictionList ({
-            ...restrictionList,
-            minGPA: newMinGPA,
-            maxGPA: newMaxGPA,
-        })
+
+        if (ValidateGPAChange(newMinGPA, newMaxGPA)) {
+            setRestrictionList ({
+                ...restrictionList,
+                minGPA: newMinGPA,
+                maxGPA: newMaxGPA,
+            })
+        }
+        
     }
 
     function HandleCategoryChange(newRequirementCategories) {

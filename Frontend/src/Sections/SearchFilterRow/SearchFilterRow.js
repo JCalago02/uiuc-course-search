@@ -8,25 +8,6 @@ import TimeSelectorSection from "../TimeSelectorSection/TimeSelectorSection";
 
 function SearchFilterRow({restrictionList, setRestrictionList, FetchClassSearch}) {
     const [showId, setShowId] = useState(-1); // state that handles which search filter menu is open
-    
-    const indexToCategory = {
-        0: "Cultural Studies",
-        1: "US Minority", 
-        2: "Western Comparative Culture",
-        3: "Non-Western Culture",
-        4: "Humanities & the Arts",
-        5: "Hist. + Philo. Perspectives",
-        6: "Literature & the Arts",
-        7: "Soc. & Behavioral Sci.",
-        8: "Behavioral Science",
-        9: "Social Science",
-        10: "Nat. Science & Tech.",
-        11: "Physical Sciences",
-        12: "Life Sciences",
-        13: "Advanced Composition",
-        14: "Quantitative Reasoning I",
-        15: "Quantitative Reasoning II"
-    }
 
     // code for GPA useState handling within search filter section
     // validates input GPA, handles alert boxes if it isn't
@@ -72,13 +53,36 @@ function SearchFilterRow({restrictionList, setRestrictionList, FetchClassSearch}
         })
     }
 
+    function ValidateTimeslotChange(newTimeslot) {
+        if (newTimeslot.dayList.length === 0) {
+            alert('Please select available days');
+            return false;
+        }
+        if (newTimeslot.startTime === -1.0) {
+            alert('Please select a valid start time');
+            return false;
+        }
+        if (newTimeslot.endTime === -1.0) {
+            alert('Please select a valid end time');
+            return false;
+        }
+        if (newTimeslot.endTime < newTimeslot.startTime) {
+            alert('Please double check that the end time is AFTER the start time');
+            return false;
+        }
+        return true;
+    }
+
     function HandleTimeslotChange(newTimeslot) {
-        const newTimeslotList = restrictionList.timeSlots;
-        newTimeslotList.push(newTimeslot);
-        setRestrictionList({
-            ...restrictionList,
-            timeSlots: newTimeslotList
-        })
+        if (ValidateTimeslotChange(newTimeslot)) {
+            const newTimeslotList = restrictionList.timeSlots;
+            newTimeslotList.push(newTimeslot);
+            setRestrictionList({
+                ...restrictionList,
+                timeSlots: newTimeslotList
+            })
+        }
+        
     }
     return (
         <div className="filter-container">
